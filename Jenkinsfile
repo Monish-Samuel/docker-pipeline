@@ -19,7 +19,7 @@ pipeline {
         }
         stage('Docker Run container'){
             steps{
-                bat 'docker run -p 5000:5000 github_api'
+                sh 'docker run -it -p 5000:5000 github_api'
             }
         }
     }
