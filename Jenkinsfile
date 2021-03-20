@@ -12,9 +12,14 @@ pipeline {
                 bat 'python src/test_Alphabet.py'
             }
         }
-        stage('Build Docker'){
+        stage('Docker Image Build'){
             steps{
                 bat 'docker build -t src .'
+            }
+        }
+        stage('Docker Run container'){
+            steps{
+            bat 'docker run -it -p 5000:5000 github_api'
             }
         }
     }
