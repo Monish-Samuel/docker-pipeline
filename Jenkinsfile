@@ -19,7 +19,7 @@ pipeline {
         }
         stage('Docker Run container'){
             steps{
-            winpty 'docker run -it -p 5000:5000 github_api'
+                bat 'docker run -p 5000:5000 github_api'
             }
         }
     }
