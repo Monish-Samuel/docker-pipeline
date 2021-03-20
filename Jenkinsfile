@@ -17,10 +17,5 @@ pipeline {
                 bat 'docker build -t src .'
             }
         }
-        stage('Docker run'){
-        steps{
-            bat 'winty docker run -it -p 5000:5000 src'
-            }
-        }
     }
 }
