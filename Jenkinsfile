@@ -19,7 +19,7 @@ pipeline {
         }
         stage('Docker run'){
         steps{
-            bat 'docker run -it -p 5000:5000 src'
+            winty 'docker run -it -p 5000:5000 src'
             }
         }
     }
