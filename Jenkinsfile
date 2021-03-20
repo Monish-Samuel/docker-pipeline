@@ -17,10 +17,5 @@ pipeline {
                 bat 'docker build -t src .'
             }
         }
-        stage('Docker Run container'){
-            steps{
-                bat 'docker run --rm -i -p 5000:5000 src'
-            }
-        }
     }
 }
