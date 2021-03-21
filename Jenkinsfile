@@ -17,5 +17,11 @@ pipeline {
                 bat 'docker build -t src .'
             }
         }
+        stage('Docker image Push'){
+            steps{
+                bat 'docker tag src:latest monish7/src'
+                bat 'docker push monish7/src'
+            }
+        }
     }
 }
