@@ -19,6 +19,7 @@ pipeline {
         }
         stage('Docker image Push'){
             steps{
+                bat 'docker login'
                 bat 'docker tag src:latest monish7/src'
                 bat 'docker push monish7/src'
             }
