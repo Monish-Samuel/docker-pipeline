@@ -11,13 +11,13 @@ pipeline{
     stages{
         stage('Compiling Stage'){
             steps{
-                bat 'python Alphabet.py'
+                bat 'python src/Alphabet.py'
             }
         }
 
         stage('Testing Stage'){
             steps{
-                bat 'python test_Alphabet.py'
+                bat 'python src/test_Alphabet.py'
             }
         }
 
