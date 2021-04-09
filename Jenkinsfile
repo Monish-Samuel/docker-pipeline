@@ -8,13 +8,13 @@ pipeline{
     stages{
         stage('Comipling Stage'){
             steps{
-                sh 'python src/Alphabet.py'
+                sh 'python3 src/Alphabet.py'
             }
         }
         
         stage('Testing Stage'){
             steps{
-                sh 'python src/test_Alphabet.py'
+                sh 'python3 src/test_Alphabet.py'
             }
         }
         
