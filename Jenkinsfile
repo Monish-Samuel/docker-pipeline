@@ -1,8 +1,9 @@
+  
 pipeline{
     agent any
     
     environment{
-        registry= '975072647018.dkr.ecr.us-east-2.amazonaws.com/string-func'
+        registry= '975072647018.dkr.ecr.ap-south-1.amazonaws.com/demo-repo'
     }
     
     stages{
@@ -29,8 +30,8 @@ pipeline{
         stage('Pushing to ECR') {
             steps{  
                 script {
-                    sh 'aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin 975072647018.dkr.ecr.us-east-2.amazonaws.com'
-                    sh 'docker push 975072647018.dkr.ecr.us-east-2.amazonaws.com/string-func:latest'
+                    sh 'aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 975072647018.dkr.ecr.ap-south-1.amazonaws.com'
+                    sh 'docker push 975072647018.dkr.ecr.ap-south-1.amazonaws.com/demo-repo:latest'
                 }
             }
         }
@@ -45,7 +46,7 @@ pipeline{
         stage('Docker Run') {
             steps{
                 script {
-                    sh 'docker run -d -p 8096:5000 --rm --name mypythonContainer 975072647018.dkr.ecr.us-east-2.amazonaws.com/string-func:latest'
+                    sh 'docker run -d -p 8096:5000 --rm --name mypythonContainer 975072647018.dkr.ecr.ap-south-1.amazonaws.com/demo-repo:latest'
                 }
             }
         }
