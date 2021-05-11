@@ -7,7 +7,7 @@ pipeline{
     }
     
     stages{
-        stage('Comipling Stage'){
+        stage('Compiling Stage'){
             steps{
                 sh 'python3 src/Alphabet.py'
             }
