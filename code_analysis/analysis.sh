@@ -1,6 +1,7 @@
 #!/bin/bash
 echo "--------------------Radon Code Analysis Start----------------------------"
-radon cc src/Alphabet.py
-radon cc src/output.py
-radon cc src/test_Alphabet.py
+declare -a strings=("Alphabet.py" "output.py" "test_Alphabet.py")
+for i in "${strings[@]}";do
+	radon cc src/$i
+done
 echo "--------------------Radon Code Analysis Stop----------------------------"
