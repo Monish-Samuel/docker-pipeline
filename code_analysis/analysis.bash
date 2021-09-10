@@ -1,5 +1,4 @@
 #!/bin/bash
-set -x #echo on
 echo "--------------------Radon Code Analysis Start----------------------------"
 mic= radon cc ../src/Alphabet.py
 echo $mic
