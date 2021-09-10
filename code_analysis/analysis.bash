@@ -1,4 +1,5 @@
 #!/bin/bash
+set -x #echo on
 echo "--------------------Radon Code Analysis Start----------------------------"
 radon cc ../src/Alphabet.py
 radon cc ../src/output.py
