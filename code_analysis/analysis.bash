@@ -1,7 +1,7 @@
 #!/bin/bash
-set -x #echo on
+exe() { echo "\$ $@" ; "$@" ; }
 echo "--------------------Radon Code Analysis Start----------------------------"
-radon cc ../src/Alphabet.py
-radon cc ../src/output.py
-radon cc ../src/test_Alphabet.py
+exe radon cc ../src/Alphabet.py
+exe radon cc ../src/output.py
+exe radon cc ../src/test_Alphabet.py
 echo "--------------------Radon Code Analysis Stop----------------------------"
